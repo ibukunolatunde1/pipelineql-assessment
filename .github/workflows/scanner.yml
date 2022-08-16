@@ -1,0 +1,32 @@
+name: Scanner
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  scan:
+    name: Scan container Images
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ISSUE_URL: ${{ github.event.issue.html_url }}
+      ISSUE_BODY: ${{ github.event.issue.body }}
+    
+    steps:
+      - name: Init
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+
+      # TASK/TODO: 
+      # Build this step in the workflow. Refer to the linked document in the README for more details
+      - name: TODO - Scan Vulnerabilities
+        run: echo "Build this step in the workflow. Refer to the linked document in the README for more details"
+      
