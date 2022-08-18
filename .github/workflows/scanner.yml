@@ -4,8 +4,6 @@ on:
   issues:
     types:
       - opened
-  push:
-    branch: features/02-second-iteration
 
 jobs:
   scan:
