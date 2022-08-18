@@ -33,6 +33,7 @@ jobs:
       - name: Parse Issue Body
         env:
           BODY: ${{ github.event.comment.body }}
-        run: echo "$BODY"
+        run: 
+          echo "$BODY"
 
       
