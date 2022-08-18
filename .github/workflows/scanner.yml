@@ -29,4 +29,9 @@ jobs:
       # Build this step in the workflow. Refer to the linked document in the README for more details
       - name: TODO - Scan Vulnerabilities
         run: echo "Build this step in the workflow. Refer to the linked document in the README for more details"
+      - name: Parse Issue Body
+        env: 
+          BODY: ${{ github.event.comment.body }}
+        run: echo "$BODY"
+
       
