@@ -31,9 +31,6 @@ jobs:
         run: 
           echo "Build this step in the workflow. Refer to the linked document in the README for more details"
       - name: Parse Issue Body
-        env:
-          BODY: ${{ github.event.comment.body }}
-        run: 
-          echo "$BODY"
+        run: echo "The issue body is $ISSUE_BODY"
 
       
