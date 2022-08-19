@@ -32,7 +32,7 @@ jobs:
           echo "Build this step in the workflow. Refer to the linked document in the README for more details"
       - name: Run a script from Repo
         run: |
-          IMAGES=${{ github.event.issue.body }}
+          IMAGES=(${{ github.event.issue.body }})
           for i in ${IMAGES[@]}
           do
               echo $i
