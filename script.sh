@@ -1,4 +1,3 @@
-#!/bin/bash
 IMAGES=${{ github.event.issue.body }}
 
 for i in ${IMAGES[@]}
