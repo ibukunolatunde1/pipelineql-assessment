@@ -33,7 +33,7 @@ jobs:
       - name: Run a script from Repo
         run: |
           mystring=${{ github.event.issue.body }}
-          IMAGES=($(echo $myString | cut -d "[" -f2 | cut -d "]" -f1))
+          IMAGES=($(echo $mystring | cut -d "[" -f2 | cut -d "]" -f1))
           for i in ${IMAGES[@]}
           do
               echo $i
