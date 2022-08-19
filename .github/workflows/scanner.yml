@@ -30,7 +30,8 @@ jobs:
       - name: TODO - Scan Vulnerabilities
         run: 
           echo "Build this step in the workflow. Refer to the linked document in the README for more details"
-      - name: Parse Issue Body
-        run: echo "The issue body is $ISSUE_BODY"
+      - name: Run a script from Repo
+        run: sh ./script.sh
+        shell: bash
 
       
